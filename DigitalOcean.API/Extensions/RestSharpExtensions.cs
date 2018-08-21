@@ -30,7 +30,7 @@ namespace DigitalOcean.API.Extensions {
             }
 
             if ((int)response.StatusCode >= 400) {
-                throw new ApiException(response.StatusCode);
+                throw new ApiException(response.StatusCode, response.Content);
             }
 
             return response;
